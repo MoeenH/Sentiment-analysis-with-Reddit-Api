@@ -9,7 +9,7 @@ def start():
     e = Entry(root, width= 20, bd=3)
     e.pack()
     
-    mylabel2 = Label(root, text=e.get)
+    mylabel2 = Label(root, text="Mustafa Faysal")
     mylabel2.pack()
 
     
