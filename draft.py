@@ -24,7 +24,7 @@ df = pd.DataFrame()
 def get_submission_WithKeyWord(sub,keyword):        #IF WE WANT TO USE KEYWORD TOO
     
         
-   # reddit = praw.Reddit(                        #Moeen Credentials  # connection
+#    reddit = praw.Reddit(                        #Moeen Credentials 
     #    client_id="ml3JKWrmbdnHChAxNziJjg",
     #    client_secret="2cXTppbxDoSnvOBLpnqvmm1XnMAZng",
     #    user_agent="my user agent",
@@ -75,7 +75,7 @@ def get_submission(sub):        #IF WE DONT WANT TO USE KEYWORD
     
     subreddit = reddit.subreddit(sub) #finds the subreddit given in the argument as sub
     # input of subreddit only
-    for submission in subreddit.hot(limit=100):  #prints the submission if keyword exists.
+    for submission in subreddit.hot(limit=50):  #prints the submission if keyword exists.
         print(submission.title)
         sub_collect.add(submission.title)
 
@@ -91,8 +91,9 @@ def executeVader():
 
     for line in sub_collect:
         polarity = sia.polarity_scores(line)
+        print(polarity)
         polarity['Submission'] = line
-        results['Polarity'] = polarity
+        # results['Polarity'] = polarity
 
 
 def modified_CSV(): #contains csv with vader results
