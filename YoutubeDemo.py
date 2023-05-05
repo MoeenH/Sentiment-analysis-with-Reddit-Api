@@ -44,9 +44,8 @@ results = {}
 for line in headlines:
     pol_score = sia.polarity_scores(line) #will return a dictionary
     pol_score['headline'] = line
-    # results.append(pol_score)
-    results['pol_score'] = pol_score
-
+    results.append(pol_score)
+    
 
 pprint(results) #prints the first 3 results only
 
