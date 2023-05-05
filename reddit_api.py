@@ -13,17 +13,17 @@ sia = SentimentIntensityAnalyzer()
 def get_submission(sub,keyword):
     
         
-   # reddit = praw.Reddit(                        #Moeen Credentials  # connection
-    #    client_id="ml3JKWrmbdnHChAxNziJjg",
-    #    client_secret="2cXTppbxDoSnvOBLpnqvmm1XnMAZng",
-    #    user_agent="my user agent",
-    #)
-
-    reddit = praw.Reddit(                           #Mustafa credentials.
-        client_id = "W3vT8epgjWSF6DhkudzmjA", 
-        client_secret = "h8X2dVt37L6ZXHRKi2K_tYy1NAozHg", 
-        user_agent = "My User Agent."
+    reddit = praw.Reddit(                        #Moeen Credentials  # connection
+        client_id="ml3JKWrmbdnHChAxNziJjg",
+        client_secret="2cXTppbxDoSnvOBLpnqvmm1XnMAZng",
+        user_agent="my user agent",
     )
+
+  #  reddit = praw.Reddit(                           #Mustafa credentials.
+   #     client_id = "W3vT8epgjWSF6DhkudzmjA", 
+    #    client_secret = "h8X2dVt37L6ZXHRKi2K_tYy1NAozHg", 
+     #   user_agent = "My User Agent."
+    #)
     
 
 
