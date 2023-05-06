@@ -1,7 +1,7 @@
 import tkinter as tk 
 import tkinter.font as tkFont
 from tkinter import *
-#import reddit_api
+import reddit_api
 class App:
 
 
@@ -60,8 +60,11 @@ class App:
             
         def keyword():
                 def send ():
-                    #reddit_api.get_submission(clicked.get(),e.get())     # this is the line that calls the reddit api
-                    print("clicked")
+                    reddit_api.get_submission_WithKeyWord(clicked.get(),e.get())     # this is the line that calls the reddit_api
+                    print("Clicked")
+                    reddit_api.create_csv()
+                    reddit_api.executeVader()
+                    reddit_api.modified_CSV()
                 
                 
                 e = Entry(root, width= 20, bd=3)
