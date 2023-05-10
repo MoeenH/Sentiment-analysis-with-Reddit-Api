@@ -60,7 +60,8 @@ class App:
             
         def keyword():
                 def send ():
-                    reddit_api.get_submission_WithKeyWord(clicked.get(),e.get())     # this is the line that calls the reddit_api
+                    #reddit_api.call_all(clicked.get(),e.get())     # this is the line that calls the reddit_api
+                    reddit_api.call_all()
                     print("Clicked")
                     self.clear_frame()
                     GLabel_170=tk.Label(root)
@@ -105,6 +106,7 @@ class App:
         clickedbutton.pack()
         clickedbutton.place(x=340,y=75,width = 150,height=30)
         clickedbutton.justify = "center"
+        
 
         
         
@@ -113,7 +115,7 @@ class App:
     def clear_frame(self):
         for widgets in root.winfo_children():
             widgets.destroy()
-            reddit_api.plot_Sentiment_BarGraph()
+            
     
         
             

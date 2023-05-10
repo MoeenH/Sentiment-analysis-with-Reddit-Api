@@ -18,17 +18,17 @@ df = pd.DataFrame()
 def get_submission_WithKeyWord(sub,keyword):                        #FUNCTION TO GET SUBMIISSIONS IF YOU WANT TO USE KEYWORD TOO
     
         
-#    reddit = praw.Reddit(                                          #Moeen Credentials 
-    #    client_id="ml3JKWrmbdnHChAxNziJjg",
-    #    client_secret="2cXTppbxDoSnvOBLpnqvmm1XnMAZng",
-    #    user_agent="my user agent",
-    #)
-
-    reddit = praw.Reddit(                                           #Mustafa credentials.
-        client_id = "W3vT8epgjWSF6DhkudzmjA", 
-        client_secret = "h8X2dVt37L6ZXHRKi2K_tYy1NAozHg", 
-        user_agent = "My User Agent."
+    reddit = praw.Reddit(                                          #Moeen Credentials 
+        client_id="ml3JKWrmbdnHChAxNziJjg",
+        client_secret="2cXTppbxDoSnvOBLpnqvmm1XnMAZng",
+        user_agent="my user agent",
     )
+
+#    reddit = praw.Reddit(                                           #Mustafa credentials.
+ #       client_id = "W3vT8epgjWSF6DhkudzmjA", 
+  #      client_secret = "h8X2dVt37L6ZXHRKi2K_tYy1NAozHg", 
+   #     user_agent = "My User Agent."
+    #)
     
 
     if reddit.read_only == True:                                    #CHECKS IF API IS CONNECTED
@@ -45,17 +45,17 @@ def get_submission_WithKeyWord(sub,keyword):                        #FUNCTION TO
 def get_submission(sub):                                            #FUNCTION TO GET SUBMISSION IF YOU DONT WANT TO USE ANY KEYWORD
 
 
-     # reddit = praw.Reddit(                                        #Moeen Credentials
-    #    client_id="ml3JKWrmbdnHChAxNziJjg",
-    #    client_secret="2cXTppbxDoSnvOBLpnqvmm1XnMAZng",
-    #    user_agent="my user agent",
-    #)
-
-    reddit = praw.Reddit(                                           #Mustafa credentials.
-        client_id = "W3vT8epgjWSF6DhkudzmjA", 
-        client_secret = "h8X2dVt37L6ZXHRKi2K_tYy1NAozHg", 
-        user_agent = "My User Agent."
+    reddit = praw.Reddit(                                        #Moeen Credentials
+        client_id="ml3JKWrmbdnHChAxNziJjg",
+        client_secret="2cXTppbxDoSnvOBLpnqvmm1XnMAZng",
+        user_agent="my user agent",
     )
+
+    #reddit = praw.Reddit(                                           #Mustafa credentials.
+     #   client_id = "W3vT8epgjWSF6DhkudzmjA", 
+      #  client_secret = "h8X2dVt37L6ZXHRKi2K_tYy1NAozHg", 
+       # user_agent = "My User Agent."
+    #)
     
 
     if reddit.read_only == True:                                    #CHECKS IF API IS CONNECTED
@@ -133,3 +133,12 @@ def plot_Sentiment_BarGraph():                                      #FUNCTION TO
     ax.set_xticklabels(['Negative', 'Neutral', 'Positive'])
     ax.set_ylabel("Percentage")
     plt.show()
+
+def call_all():
+    get_submission_WithKeyWord('politics','trump')
+    create_csv()
+    executeVader()
+    modified_CSV()
+    plot_Sentiment_BarGraph()
+    
+    
