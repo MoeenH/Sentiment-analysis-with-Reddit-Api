@@ -134,8 +134,8 @@ def plot_Sentiment_BarGraph():                                      #FUNCTION TO
     ax.set_ylabel("Percentage")
     plt.show()
 
-def call_all():
-    get_submission_WithKeyWord('politics','trump')
+def call_all(sub, keyword):
+    get_submission_WithKeyWord(sub,keyword)
     create_csv()
     executeVader()
     modified_CSV()

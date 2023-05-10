@@ -60,8 +60,10 @@ class App:
             
         def keyword():
                 def send ():
-                    #reddit_api.call_all(clicked.get(),e.get())     # this is the line that calls the reddit_api
-                    reddit_api.call_all()
+                    reddit_api.call_all(clicked.get(),e.get())
+                    
+                     # this is the line that calls the reddit_api
+                    #reddit_api.call_all()
                     print("Clicked")
                     self.clear_frame()
                     GLabel_170=tk.Label(root)
@@ -69,11 +71,9 @@ class App:
                     GLabel_170["font"] = ft
                     GLabel_170["fg"] = "#333333"
                     GLabel_170["text"] = "Working On It..."
-                
+                   
                     GLabel_170.place(x=200,y=5,height=70)
-                    reddit_api.create_csv()
-                    reddit_api.executeVader()
-                    reddit_api.modified_CSV()
+                    
                     self.clear_frame()
                     GLabel_169=tk.Label(root)
                     ft = tkFont.Font(family='Tibetan machine uni',size=25)
