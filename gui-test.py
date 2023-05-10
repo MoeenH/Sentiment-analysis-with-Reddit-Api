@@ -62,9 +62,27 @@ class App:
                 def send ():
                     reddit_api.get_submission_WithKeyWord(clicked.get(),e.get())     # this is the line that calls the reddit_api
                     print("Clicked")
+                    self.clear_frame()
+                    GLabel_170=tk.Label(root)
+                    ft = tkFont.Font(family='Tibetan machine uni',size=25)
+                    GLabel_170["font"] = ft
+                    GLabel_170["fg"] = "#333333"
+                    GLabel_170["text"] = "Working On It..."
+                
+                    GLabel_170.place(x=200,y=5,height=70)
                     reddit_api.create_csv()
                     reddit_api.executeVader()
                     reddit_api.modified_CSV()
+                    self.clear_frame()
+                    GLabel_169=tk.Label(root)
+                    ft = tkFont.Font(family='Tibetan machine uni',size=25)
+                    GLabel_169["font"] = ft
+                    GLabel_169["fg"] = "#333333"
+                    GLabel_169["text"] = "Data Created"
+                
+                    GLabel_169.place(x=200,y=5,height=70)
+                    
+                    
                 
                 
                 e = Entry(root, width= 20, bd=3)
@@ -95,6 +113,7 @@ class App:
     def clear_frame(self):
         for widgets in root.winfo_children():
             widgets.destroy()
+            reddit_api.plot_Sentiment_BarGraph()
     
         
             
