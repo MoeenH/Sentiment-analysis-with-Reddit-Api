@@ -24,13 +24,12 @@ def get_submission_WithKeyWord(sub,keyword):                        #FUNCTION TO
         client_secret=config.CLIENT_SECRET,
         user_agent=config.USER_AGENT,
     )
-
-#    reddit = praw.Reddit(                                           #Mustafa credentials.
- #       client_id = "W3vT8epgjWSF6DhkudzmjA", 
-  #      client_secret = "h8X2dVt37L6ZXHRKi2K_tYy1NAozHg", 
-   #     user_agent = "My User Agent."
+    #reddit = praw.Reddit(                                           #Mustafa credentials.
+     #   client_id="ml3JKWrmbdnHChAxNziJjg",
+      #  client_secret="2cXTppbxDoSnvOBLpnqvmm1XnMAZng",
+       # user_agent="my user agent",
     #)
-    
+
 
     if reddit.read_only == True:                                    #CHECKS IF API IS CONNECTED
         print("API Connected Successfully")

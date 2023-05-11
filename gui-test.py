@@ -2,12 +2,20 @@ import tkinter as tk
 import tkinter.font as tkFont
 from tkinter import *
 import reddit_api
+import config
+from PIL import ImageTk, Image
+from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
+import numpy as np
+import test
+
+            
+                        
 class App:
 
 
     def __init__(self, root):
         #setting title
-        root.title("undefined")
+        root.title("Analysis")
         #setting window size
         width=600
         height=500
@@ -60,8 +68,9 @@ class App:
             
         def keyword():
                 def send ():
+                        
                     reddit_api.call_all(clicked.get(),e.get())
-                    
+
                      # this is the line that calls the reddit_api
                     #reddit_api.call_all()
                     print("Clicked")
@@ -83,8 +92,48 @@ class App:
                 
                     GLabel_169.place(x=200,y=5,height=70)
                     
+                                
+                    GButton_507=tk.Button(root, command=reddit_api.print_Positive_Submission)
+                    GButton_507["activebackground"] = "#934e4e"
+                    GButton_507["activeforeground"] = "#d0b3b3"
+                    GButton_507["anchor"] = "w"
+                    GButton_507["bg"] = "#efefef"
+                    ft = tkFont.Font(family='Times',size=10)
+                    GButton_507["font"] = ft
+                    GButton_507["fg"] = "#000000"
+                    GButton_507["justify"] = "center"
+                    GButton_507["text"] = "Positive comments"
+                    GButton_507.place(x=150,y=230,width=105,height=30)
                     
-                
+                    
+                    GButton_506=tk.Button(root, command=reddit_api.print_Negative_Submission)
+                    GButton_506["activebackground"] = "#934e4e"
+                    GButton_506["activeforeground"] = "#d0b3b3"
+                    GButton_506["anchor"] = "w"
+                    GButton_506["bg"] = "#efefef"
+                    ft = tkFont.Font(family='Times',size=10)
+                    GButton_506["font"] = ft
+                    GButton_506["fg"] = "#000000"
+                    GButton_506["justify"] = "center"
+                    GButton_506["text"] = "Negative comments"
+                    GButton_506.place(x=350,y=230,width=105,height=30)
+
+                    def make_wordcloud():
+                        test
+                        test.show_cloud()
+                   
+                    GButton_505=tk.Button(root, command=make_wordcloud())
+                    GButton_505["activebackground"] = "#934e4e"
+                    GButton_505["activeforeground"] = "#d0b3b3"
+                    GButton_505["anchor"] = "w"
+                    GButton_505["bg"] = "#efefef"
+                    ft = tkFont.Font(family='Times',size=10)
+                    GButton_505["font"] = ft
+                    GButton_505["fg"] = "#000000"
+                    GButton_505["justify"] = "center"
+                    GButton_505["text"] = "Most common words"
+                    GButton_505.place(x=240,y=350,width=105,height=30)
+                    
                 
                 e = Entry(root, width= 20, bd=3)
                 e.pack()
@@ -115,8 +164,9 @@ class App:
     def clear_frame(self):
         for widgets in root.winfo_children():
             widgets.destroy()
-            
+        
     
+        
         
             
 
