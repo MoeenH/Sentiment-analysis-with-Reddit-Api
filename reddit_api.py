@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+import config
 
 import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer 
@@ -19,9 +20,9 @@ def get_submission_WithKeyWord(sub,keyword):                        #FUNCTION TO
     
         
     reddit = praw.Reddit(                                          #Moeen Credentials 
-        client_id="ml3JKWrmbdnHChAxNziJjg",
-        client_secret="2cXTppbxDoSnvOBLpnqvmm1XnMAZng",
-        user_agent="my user agent",
+        client_id=config.CLIENT_ID,
+        client_secret=config.CLIENT_SECRET,
+        user_agent=config.USER_AGENT,
     )
 
 #    reddit = praw.Reddit(                                           #Mustafa credentials.
@@ -42,29 +43,6 @@ def get_submission_WithKeyWord(sub,keyword):                        #FUNCTION TO
             sub_collect.add(submission.title)                       #COLLECTS THE SUBMISSIONS IN THE SET (SUB_COLLECT)
             
 
-def get_submission(sub):                                            #FUNCTION TO GET SUBMISSION IF YOU DONT WANT TO USE ANY KEYWORD
-
-
-    reddit = praw.Reddit(                                        #Moeen Credentials
-        client_id="ml3JKWrmbdnHChAxNziJjg",
-        client_secret="2cXTppbxDoSnvOBLpnqvmm1XnMAZng",
-        user_agent="my user agent",
-    )
-
-    #reddit = praw.Reddit(                                           #Mustafa credentials.
-     #   client_id = "W3vT8epgjWSF6DhkudzmjA", 
-      #  client_secret = "h8X2dVt37L6ZXHRKi2K_tYy1NAozHg", 
-       # user_agent = "My User Agent."
-    #)
-    
-
-    if reddit.read_only == True:                                    #CHECKS IF API IS CONNECTED
-        print("API Connected Successfully")
-
-    
-    subreddit = reddit.subreddit(sub)                               #FINDS THE SUBREDDIT GIVEN IN THE ARGUMENT 'SUB'
-    for submission in subreddit.hot(limit=None):                    
-        sub_collect.add(submission.title)                           #COLLECTS THE SUBMISSIONS IN THE SET (SUB_COLLECT) 
 
 
 def create_csv():                                                   #CREATES A CSV FILE OF THE DATA COLLECTED IN SUB_COLLECT
