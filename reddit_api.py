@@ -37,7 +37,7 @@ def get_submission_WithKeyWord(sub,keyword):                        #FUNCTION TO
 
     subreddit = reddit.subreddit(sub)                               #FINDS THE SUBREDDIT GIVEN IN THE ARGUMENT 'SUB'
 
-    for submission in subreddit.hot(limit=None):                    #SEARCHES THE SUBREDDIT IN THE HOT CATEGORY
+    for submission in subreddit.hot(limit=400):                    #SEARCHES THE SUBREDDIT IN THE HOT CATEGORY
         if keyword.casefold() in submission.title.casefold() :      #IF CONDITION TO CHECK IF THE 'KEYWORD' EXISTS IN THE SUBMISSION
             sub_collect.add(submission.title)                       #COLLECTS THE SUBMISSIONS IN THE SET (SUB_COLLECT)
             

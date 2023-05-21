@@ -70,6 +70,9 @@ class App:
                 def send ():
                         
                     reddit_api.call_all(clicked.get(),e.get())
+                    def make_wordcloud():
+                        test
+                        test.show_cloud()
 
                      # this is the line that calls the reddit_api
                     #reddit_api.call_all()
@@ -118,11 +121,9 @@ class App:
                     GButton_506["text"] = "Negative comments"
                     GButton_506.place(x=350,y=230,width=105,height=30)
 
-                    def make_wordcloud():
-                        test
-                        test.show_cloud()
                    
-                    GButton_505=tk.Button(root, command=make_wordcloud())
+                   
+                    GButton_505=tk.Button(root, command=make_wordcloud)
                     GButton_505["activebackground"] = "#934e4e"
                     GButton_505["activeforeground"] = "#d0b3b3"
                     GButton_505["anchor"] = "w"
